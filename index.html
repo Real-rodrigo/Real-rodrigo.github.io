@@ -2,39 +2,25 @@
 <html>
   <head>
     <title>My Future Plans</title>
-    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
 
-  <body class="bg-blue-50 text-gray-800 p-4 font-sans"></body>
+  <body>
     <!-- All content goes here -->
-    <div id="all-contents" class="max-w-4x1 mx-auto"></div>
-      <nav class="bg-blue-500 p-4 rounded-lg mb-4 shadow-md">
-        <div class="flex justify-between items-center">
-          <h1 class="text-white text-2xl font-bold">
+    <div id="all-contents">
+      <nav>
         <h1>Rodrigo's JavaScript Website</h1>
-        </h1>
-        <ul class="flex space-x-4">
-          <li>
-            <a 
-               href="index.html"
-               class="text-white hover:text-blue-200 px-3 py-2 rounded"
-            >Home</a
-            >
+        <ul id="nav-ul">
+          <li class="nav-li">
+            <a href="index.html">Home</a>
           </li>
-          <li>
-            <a 
-              href="portfolio.html"
-              class="text-white hover:text-blue-200 px-3 py-2 rounded"
-              >Portfolio</a
-            >
+          <li class="nav-li">
+            <a href="portfolio.html">Portfolio</a>
           </li>
         </ul>
-       </div>
       </nav>
-
-      <main class="bg-white rounded-lg shadow-lg p-6">
-        <div class="flex flex-col md:flex-row gap-6">
+      <main>
         <div class="sidebar">
           <img
             class="sidebar-img"
@@ -42,17 +28,18 @@
           />
         </div>
         <div class="content">
-          <h2 class="text-3xl font-bold text-gray-900 mb-2">Rodrigo Salas</h2>
-          <p class="text-lg text-gray-600 mb-6">Student At Bonnabel High School</p>
+          <h2>Rodrigo Salas</h2>
+          <p>Student At Bonnabel High School</p>
           <div id="interests">
-            <h3 class="text-xl font-semibold mb-3 text-gray-800">Interests</h3>
-            <ul class"space-y-2">
-              <li class="bg-blue-100 px-3 py-2 rounded text-blue-800">Graduate</li>
-              <li class="bg-pink-100 px-3 py-2 rounded text-pink-800">Engineering</li>
-              <li class="bg-green-100 px-3 py-2 rounded text-green-800">Graphic Art Desginer</li>
+            <h3>Interests</h3>
+            <ul>
+              <li>Graduate</li>
+              <li>Engineering</li>
+              <li>Graphic Art Desginer</li>
             </ul>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
+  </body>
 </html>
