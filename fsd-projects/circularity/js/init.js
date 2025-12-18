@@ -42,15 +42,15 @@ var init = function (window) {
         This Function is called 60 times/second, producing 60 frames/second.
         In each frame, for every circle, it should redraw that circle
         and check to see if it has drifted off the screen.         
-        */
+    */
+
     function update() {
       for (var i = 0; i < circles.length; i++) {
         physikz.updatePosition(circles[i]);
         game.checkCirclePosition(circles[i]);
       }
-      // TODO 4 : Update the position of each circle using physikz.updatePosition()
+    // TODO 4 : Update the position of each circle using physikz.updatePosition()
     }
-
     // TODO 5 : Call game.checkCirclePosition() on your circles
 
     // TODO 8 / TODO 9 : Iterate over the array
@@ -59,7 +59,7 @@ var init = function (window) {
         This Function should check the position of a circle that is passed to the 
         Function. If that circle drifts off the screen, this Function should move
         it to the opposite side of the screen.
-        */
+    */
     game.checkCirclePosition = function (circle) {
       // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
 
@@ -80,6 +80,7 @@ var init = function (window) {
         circle.y = 0;
       }
     };
+
     // YOUR TODO 6 CODE ENDS HERE //////////////////////////
 
     /////////////////////////////////////////////////////////////
