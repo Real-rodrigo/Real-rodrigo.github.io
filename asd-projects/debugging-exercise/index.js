@@ -14,7 +14,7 @@ var ghosts = [];
 var ghostRadius = 10;
 // modify these values if you want faster moving ghosts or a shorter countdown timer
 const FPS = 25;
-const initialDelay = 5000; //5_000//
+const initialDelay = 5_000; 
 
 //////////
 // startup
@@ -141,7 +141,7 @@ function bounceGhost(ghost) {
     ghost.speedX *= -1;
   }
   // this bounces off the right wall
-  else if (ghost.x > boardWidth - (ghostRadius * 2)) {  //else if (ghost.x > boardWidth) {//
+  else if (ghost.x > boardWidth) { 
     ghost.x -= ghost.speedX;
     ghost.speedX *= -1;
   }
@@ -151,9 +151,9 @@ function bounceGhost(ghost) {
     ghost.speedY *= -1;
   }
   // this bounces off the bottom wall
-  else if (ghost.y > boardHeight - (ghostRadius * 2)) { //else if (ghost.y > boardHeight) {//
+  else if (ghost.y > boardHeight) { 
     ghost.y -= ghost.speedY;
-    ghost.speedY *= -1;  //ghost.speedX *= -1;//
+    ghost.speedY *= -1;
   }
 }
 
