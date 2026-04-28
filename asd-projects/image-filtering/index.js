@@ -19,9 +19,10 @@ function resetAndRender() {
 // this function applies the filters to the image and is where you should call
 // all of your apply functions
 function applyAndRender() {
-  // Multiple TODOs: Call your apply function(s) here
-
-  
+  applyFilter(reddify);
+  applyFilter(decreaseBlue);
+  applyFilterNoBackground(increaseGreenByBlue);
+  applyFilterNoBackground(reddify);
 
   // do not change the below line of code
   render($("#display"), image);
@@ -32,18 +33,52 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2, 3 & 5: Create the applyFilter function here
-
+function applyFilter(filterFunction) {
+  for (var i = 0; i < image.length; i++) {
+    for (var j = 0; j < image[i].length; j++) {
+      // pixel looks like "rgb(150, 150, 150)"
+      var pixel = image[i][j];
+      // pixelArray looks like [150, 150, 150]
+      var pixelArray = rgbStringToArray(pixel);
+      // this is where i'll modify the color values later
+      filterFunction(pixelArray);
+      var updatedPixel = rgbArrayToString(pixelArray);
+      image[i][j] = updatedPixel;
+    }
+  }
+}
 
 // TODO 9 Create the applyFilterNoBackground function
-
+function applyFilterNoBackground(filterFunction) {
+  var backgroundColor = image[0][0];
+  for (var i = 0; i < image.length; i++) {
+    for (var j = 0; j < image[i].length; j++) {
+      if (image[i][j] !== backgroundColor) {
+        var pixelArray = rgbStringToArray(image[i][j]);
+        filterFunction(pixelArray);
+        image[i][j] = rgbArrayToString(pixelArray);
+      }
+    }
+  }
+}
 
 // TODO 6: Create the keepInBounds function
-
+function keepInBounds(num) {
+  return num > 255 ? 255 : num < 0 ? 0 : num;
+}
 
 // TODO 4: Create reddify filter function
-
+function reddify(pixelArray) {
+  pixelArray[RED] = 200;
+}
 
 // TODO 7 & 8: Create more filter functions
+function decreaseBlue(pixelArray) {
+  pixelArray[BLUE] = keepInBounds(pixelArray[BLUE] - 50);
+}
 
+function increaseGreenByBlue(pixelArray) {
+  pixelArray[GREEN] = keepInBounds(pixelArray[GREEN] + pixelArray[BLUE]);
+}
 
 // CHALLENGE code goes below here
